@@ -80,7 +80,7 @@ export class HomePage {
   async help(){
     const alert = await this.alertController.create({
       header: "About",
-      message: 'eZlist Version 0.1.0',
+      message: 'eZlist Version 0.1.1',
       buttons: [
         {
             text: 'OK'
@@ -126,7 +126,7 @@ export class HomePage {
             color = "orange"
           }
           if(data.data.category == "movieButton"){
-            category = "Movie"
+            category = "Movie/TV"
             icon = "videocam"
             color = "#10dc60"
           }
