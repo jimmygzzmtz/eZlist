@@ -15,11 +15,11 @@
 <ion-content>
   <ion-list>
     <ion-item lines="full">
-      <ion-input id="itemName" disabled class="ion-text-center" placeholder="Select a category, then enter a title"></ion-input>
+      <ion-input [(ngModel)]="itemNameString" id="itemName" disabled class="ion-text-center" placeholder="Select a category, then enter a title"></ion-input>
     </ion-item>
   </ion-list>
 
-  <ion-grid>
+  <ion-grid class="vertical-center">
 
       <ion-row class="ion-justify-content-center">
           <ion-col class="ion-text-center">
@@ -66,7 +66,7 @@
       <ion-row class="ion-justify-content-center">
           <ion-col class="ion-text-center">
               <ion-button id="personButton" color="tertiary" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
-                  <ion-icon size="large" name="contact"></ion-icon>
+                  <ion-icon size="large" name="person"></ion-icon>
               </ion-button>
             <h3>Person</h3>          
             </ion-col>

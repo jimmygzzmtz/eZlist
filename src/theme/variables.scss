@@ -95,6 +95,8 @@
 
 }
 
-.absolute{
-  position: absolute
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-60%);
 }

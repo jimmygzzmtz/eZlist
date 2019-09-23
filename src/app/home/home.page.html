@@ -10,13 +10,13 @@
   
   <ion-list>
 
-    <ion-item lines="full">
+    <ion-item *ngFor="let item of items" lines="full">
       <ion-avatar slot="start">
-          <img src="./avatar-luke.png">
+          <ion-icon [ngStyle]="{'color': item.color}" size="large" name="{{ item.icon }}"></ion-icon>
       </ion-avatar>
       <ion-label>
-        <h1>Item</h1>
-        <p>Category</p>
+        <h1>{{ item.name }}</h1>
+        <p>{{ item.category }}</p>
       </ion-label>
     </ion-item>
 
