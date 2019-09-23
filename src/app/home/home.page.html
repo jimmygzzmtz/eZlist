@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      eZlist
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list>
+
+    <ion-item lines="full">
+      <ion-avatar slot="start">
+          <img src="./avatar-luke.png">
+      </ion-avatar>
+      <ion-label>
+        <h1>Item</h1>
+        <p>Category</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addItem()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

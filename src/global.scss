@@ -1,0 +1,63 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+.ion-color-pink {
+    --ion-color-base: var(--ion-color-pink) !important;
+    --ion-color-base-rgb: var(--ion-color-pink-rgb) !important;
+    --ion-color-contrast: var(--ion-color-pink-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-pink-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-pink-shade) !important;
+    --ion-color-tint: var(--ion-color-pink-tint) !important;
+}
+
+.ion-color-orange {
+    --ion-color-base: var(--ion-color-orange) !important;
+    --ion-color-base-rgb: var(--ion-color-orange-rgb) !important;
+    --ion-color-contrast: var(--ion-color-orange-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-orange-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-orange-shade) !important;
+    --ion-color-tint: var(--ion-color-orange-tint) !important;
+}
+
+.ion-color-light-orange {
+    --ion-color-base: var(--ion-color-light-orange) !important;
+    --ion-color-base-rgb: var(--ion-color-light-orange-rgb) !important;
+    --ion-color-contrast: var(--ion-color-light-orange-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-light-orange-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-light-orange-shade) !important;
+    --ion-color-tint: var(--ion-color-light-orange-tint) !important;
+}
+
+.ion-color-light-red {
+    --ion-color-base: var(--ion-color-light-red) !important;
+    --ion-color-base-rgb: var(--ion-color-light-red-rgb) !important;
+    --ion-color-contrast: var(--ion-color-light-red-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-light-red-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-light-red-shade) !important;
+    --ion-color-tint: var(--ion-color-light-red-tint) !important;
+}

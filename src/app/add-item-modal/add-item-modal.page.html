@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title class="ion-text-center">
+        <ion-label>Add Item</ion-label>
+      </ion-title>
+      <ion-buttons (click)="dismiss()" slot="start">
+          <ion-icon color="danger" slot="icon-only" name="close"></ion-icon>
+      </ion-buttons>
+      <ion-buttons (click)="save()" slot="end">
+          <ion-icon color="secondary" slot="icon-only" name="checkmark"></ion-icon>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item lines="full">
+      <ion-input id="itemName" disabled class="ion-text-center" placeholder="Select a category, then enter a title"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+
+      <ion-row class="ion-justify-content-center">
+          <ion-col class="ion-text-center">
+              <ion-button id="barButton" color="secondary" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
+                  <ion-icon size="large" name="beer"></ion-icon>
+              </ion-button>
+              <h3>Bar</h3>          
+            </ion-col>
+            <ion-col class="ion-text-center">
+              <ion-button id="bookButton" color="warning" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
+                  <ion-icon size="large" name="book"></ion-icon>
+              </ion-button> 
+            <h3>Book</h3>   
+            </ion-col>
+            <ion-col class="ion-text-center">
+              <ion-button id="foodButton" color="pink" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
+                  <ion-icon size="large" name="pizza"></ion-icon>
+              </ion-button> 
+            <h3>Food</h3>   
+            </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+          <ion-col class="ion-text-center">
+              <ion-button id="ideaButton" color="orange" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
+                  <ion-icon size="large" name="bulb"></ion-icon>
+              </ion-button> 
+            <h3>Idea</h3>            
+            </ion-col>
+            <ion-col class="ion-text-center">
+              <ion-button id="movieButton" color="success" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
+                  <ion-icon size="large" name="videocam"></ion-icon>
+              </ion-button> 
+            <h3>Movie</h3>   
+            </ion-col>
+            <ion-col class="ion-text-center">
+              <ion-button id="musicButton" color="light-orange" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
+                  <ion-icon size="large" name="musical-notes"></ion-icon>
+              </ion-button> 
+            <h3>Music</h3>
+            </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-center">
+          <ion-col class="ion-text-center">
+              <ion-button id="personButton" color="tertiary" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
+                  <ion-icon size="large" name="contact"></ion-icon>
+              </ion-button>
+            <h3>Person</h3>          
+            </ion-col>
+            <ion-col class="ion-text-center">
+              <ion-button id="placeButton" color="danger" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
+                  <ion-icon size="large" name="pin"></ion-icon>
+              </ion-button>
+            <h3>Place</h3>    
+            </ion-col>
+            <ion-col class="ion-text-center">
+              <ion-button id="productButton" color="light-red" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
+                  <ion-icon size="large" name="cube"></ion-icon>
+              </ion-button>
+            <h3>Product</h3> 
+            </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+</ion-content>
