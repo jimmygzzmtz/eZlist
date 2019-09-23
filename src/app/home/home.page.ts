@@ -80,7 +80,7 @@ export class HomePage {
   async help(){
     const alert = await this.alertController.create({
       header: "About",
-      message: 'eZlist Version 1.0',
+      message: 'eZlist Version 0.1.0',
       buttons: [
         {
             text: 'OK'
