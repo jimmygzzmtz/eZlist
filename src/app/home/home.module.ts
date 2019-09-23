@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AddItemModalPage } from '../add-item-modal/add-item-modal.page';
+import { OpenItemPage } from '../open-item/open-item.page';
 
 import { HomePage } from './home.page';
 
@@ -19,7 +20,7 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage, AddItemModalPage],
-  entryComponents: [AddItemModalPage]
+  declarations: [HomePage, AddItemModalPage, OpenItemPage],
+  entryComponents: [AddItemModalPage, OpenItemPage]
 })
 export class HomePageModule {}

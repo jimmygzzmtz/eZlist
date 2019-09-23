@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Details</ion-title>
+    <ion-buttons (click)="dismiss()" slot="start">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-buttons (click)="save()" slot="end">
+        <ion-icon color="secondary" slot="icon-only" name="checkmark"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-item lines="full">
+          <h1>{{ name }}</h1>
+        </ion-item>
+      
+        <ion-item lines="none">
+            <ion-icon slot="start" [ngStyle]="{'color': color}" name="{{ icon }}"></ion-icon>
+            <ion-label>{{ category }}</ion-label>
+            <ion-label class="ion-text-right">{{ date | date : 'MMM d, y'}}</ion-label>
+        </ion-item> 
+      </ion-card>
+
+    <ion-textarea [(ngModel)]="notesArea" placeholder="Type your notes here!"></ion-textarea>
+
+</ion-content>

@@ -60,7 +60,8 @@ export class AddItemModalPage implements OnInit {
     else{
       var item = {
         category: this.selectedButtonId,
-        name: this.itemNameString
+        name: this.itemNameString,
+        date: new Date
       } 
       this.modalController.dismiss(item);
     }

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
 import { AddItemModalPage } from '../add-item-modal/add-item-modal.page';
+import { OpenItemPage } from '../open-item/open-item.page';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,9 @@ export class HomePage {
 
   items: any = [];
 
-  constructor(private storage: Storage, public modalController: ModalController) {
+  nav = document.querySelector('ion-nav');
+
+  constructor(private storage: Storage, public modalController: ModalController, public navController: NavController) {
     this.storage.get('itemsArr').then((val) => {
       if (val != "[]"){
        this.items = JSON.parse(val)
@@ -24,11 +27,40 @@ export class HomePage {
     });
   }
 
+  deleteItem(item){
+    let index = this.items.indexOf(item);
+    this.items.splice(index, 1);
+    this.storage.set('itemsArr', JSON.stringify(this.items));
+  }
+
+  async openItem(item){
+    let index = this.items.indexOf(item);
+
+    const modal = await this.modalController.create({
+      component: OpenItemPage,
+      componentProps: {
+        openedItem: item 
+      }
+    });
+
+    modal.onDidDismiss()
+      .then((data) => {
+          if (data.data != undefined){
+            this.items[index] = data.data
+            this.storage.set('itemsArr', JSON.stringify(this.items));
+          }
+    });
+    
+    await modal.present(); 
+  }
+
   async addItem() {
     const modal = await this.modalController.create({
       component: AddItemModalPage,
       componentProps: { 
       }
+
+      
     });
 
     modal.onDidDismiss()
@@ -85,13 +117,17 @@ export class HomePage {
           if (this.items == null){
             this.items = [];
           }
-          this.items.push({
+          var newItem = {
             category: category,
             name: data.data.name,
             icon: icon,
-            color: color
-          })
+            color: color,
+            date: data.data.date,
+            notes: ""
+          }
+          this.items.push(newItem)
           this.storage.set('itemsArr', JSON.stringify(this.items));
+          this.openItem(newItem)
         }
     });
 
