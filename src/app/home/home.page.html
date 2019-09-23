@@ -3,6 +3,27 @@
     <ion-title class="ion-text-center">
       eZlist
     </ion-title>
+    <ion-item hidden>
+        <ion-label>Show</ion-label>
+        <ion-select [(ngModel)]="filterBy" id="hiddenSelector">
+            <ion-select-option selected value="All">All</ion-select-option>
+            <ion-select-option value="Bar">Bar</ion-select-option>
+            <ion-select-option value="Book">Book</ion-select-option>
+            <ion-select-option value="Food">Food</ion-select-option>
+            <ion-select-option value="Idea">Idea</ion-select-option>
+            <ion-select-option value="Movie">Movie</ion-select-option>
+            <ion-select-option value="Music">Music</ion-select-option>
+            <ion-select-option value="Person">Person</ion-select-option>
+            <ion-select-option value="Place">Place</ion-select-option>
+            <ion-select-option value="Product">Product</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-buttons (click)="filterSelect()" slot="start">
+        <ion-icon slot="icon-only" name="list"></ion-icon>
+    </ion-buttons>
+    <ion-buttons (click)="help()" slot="end">
+        <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +31,7 @@
   
   <ion-list>
 
-    <ion-item-sliding *ngFor="let item of items">
+    <ion-item-sliding *ngFor="let item of getItems()">
       <ion-item-options side="start">
         <ion-item-option color="danger" (click)="deleteItem(item)">Delete</ion-item-option>
       </ion-item-options>

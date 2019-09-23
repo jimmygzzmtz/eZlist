@@ -9,22 +9,22 @@ import { ModalController } from '@ionic/angular';
 export class OpenItemPage implements OnInit {
 
   openedItem: any;
-  name: any;
   icon: any;
   category: any;
   color: any;
   date: any;
   notesArea: any;
+  itemNameInput: any;
 
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {
-    this.name = this.openedItem.name
     this.icon = this.openedItem.icon
     this.category = this.openedItem.category
     this.color = this.openedItem.color
     this.date = this.openedItem.date
     this.notesArea = this.openedItem.notes
+    this.itemNameInput = this.openedItem.name
   }
 
   dismiss(){
@@ -34,7 +34,7 @@ export class OpenItemPage implements OnInit {
   save(){
     var editedItem = {
       category: this.category,
-      name: this.name,
+      name: this.itemNameInput,
       icon: this.icon,
       color: this.color,
       date: this.date,

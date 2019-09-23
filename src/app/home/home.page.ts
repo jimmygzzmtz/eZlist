@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { ModalController, NavController } from '@ionic/angular';
+import { ModalController, NavController, AlertController } from '@ionic/angular';
 import { AddItemModalPage } from '../add-item-modal/add-item-modal.page';
 import { OpenItemPage } from '../open-item/open-item.page';
 
@@ -13,10 +13,11 @@ import { OpenItemPage } from '../open-item/open-item.page';
 export class HomePage {
 
   items: any = [];
+  filterBy: any;
 
   nav = document.querySelector('ion-nav');
 
-  constructor(private storage: Storage, public modalController: ModalController, public navController: NavController) {
+  constructor(private storage: Storage, public modalController: ModalController, public navController: NavController, public alertController: AlertController) {
     this.storage.get('itemsArr').then((val) => {
       if (val != "[]"){
        this.items = JSON.parse(val)
@@ -25,12 +26,18 @@ export class HomePage {
        this.storage.set('itemsArr', JSON.stringify(this.items));
       }
     });
+    this.filterBy = "All"
   }
 
   deleteItem(item){
     let index = this.items.indexOf(item);
     this.items.splice(index, 1);
     this.storage.set('itemsArr', JSON.stringify(this.items));
+  }
+
+  filterSelect(){
+    var filterSelector = document.querySelector('#hiddenSelector')
+    filterSelector.open()
   }
 
   async openItem(item){
@@ -50,8 +57,36 @@ export class HomePage {
             this.storage.set('itemsArr', JSON.stringify(this.items));
           }
     });
-    
+
     await modal.present(); 
+  }
+
+  getItems(){
+    if(this.filterBy != "All"){
+      var items2 = this.items.filter(checkItem, this);
+      return items2;
+    }
+    else{
+      return this.items
+    }
+    
+
+    function checkItem(item) {
+      return (item.category == this.filterBy);
+    } 
+  }
+
+  async help(){
+    const alert = await this.alertController.create({
+      header: "About",
+      message: 'eZlist Version 1.0',
+      buttons: [
+        {
+            text: 'OK'
+        }
+    ]
+    });
+    await alert.present();
   }
 
   async addItem() {
