@@ -14,6 +14,7 @@ export class HomePage {
 
   items: any = [];
   filterBy: any;
+  filterSelector: any;
 
   nav = document.querySelector('ion-nav');
 
@@ -36,8 +37,8 @@ export class HomePage {
   }
 
   filterSelect(){
-    var filterSelector = document.querySelector('#hiddenSelector')
-    filterSelector.open()
+    this.filterSelector = document.querySelector('#hiddenSelector')
+    this.filterSelector.open()
   }
 
   async openItem(item){

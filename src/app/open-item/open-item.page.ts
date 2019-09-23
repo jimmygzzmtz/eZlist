@@ -25,6 +25,9 @@ export class OpenItemPage implements OnInit {
     this.date = this.openedItem.date
     this.notesArea = this.openedItem.notes
     this.itemNameInput = this.openedItem.name
+
+    //var textArea = document.querySelector('#textArea');
+    //setTimeout(() => { textArea.setFocus(); }, 150);
   }
 
   dismiss(){

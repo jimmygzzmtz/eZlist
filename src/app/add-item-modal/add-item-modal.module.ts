@@ -5,12 +5,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AddItemModalPage } from './add-item-modal.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: AddItemModalPage
+    path: ''
   }
 ];
 
@@ -21,6 +19,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AddItemModalPage]
+  declarations: []
 })
 export class AddItemModalPageModule {}

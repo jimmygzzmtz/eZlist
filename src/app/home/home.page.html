@@ -4,7 +4,7 @@
       eZlist
     </ion-title>
     <ion-item hidden>
-        <ion-label>Show</ion-label>
+        <ion-label>Filter</ion-label>
         <ion-select [(ngModel)]="filterBy" id="hiddenSelector">
             <ion-select-option selected value="All">All</ion-select-option>
             <ion-select-option value="Bar">Bar</ion-select-option>
@@ -53,7 +53,7 @@
 </ion-content>
 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button (click)="addItem()">
+  <ion-fab-button color="orange" (click)="addItem()">
     <ion-icon name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>

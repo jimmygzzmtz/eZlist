@@ -5,12 +5,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { OpenItemPage } from './open-item.page';
-
 const routes: Routes = [
   {
-    path: '',
-    component: OpenItemPage
+    path: ''
   }
 ];
 
@@ -21,6 +18,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [OpenItemPage]
+  declarations: []
 })
 export class OpenItemPageModule {}
