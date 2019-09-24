@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, AlertController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-add-item-modal',
@@ -13,7 +14,7 @@ export class AddItemModalPage implements OnInit {
   selectedButtonId: string;
   buttonAux: any;
 
-  constructor(public modalController: ModalController, public alertController: AlertController) {
+  constructor(public modalController: ModalController, public alertController: AlertController, private _translate: TranslateService) {
   }
 
   ngOnInit() {
@@ -48,7 +49,7 @@ export class AddItemModalPage implements OnInit {
   async save(){
     if(this.selectedButtonId == undefined || this.itemNameString == undefined){
       const alert = await this.alertController.create({
-        header: "Please select a category and enter a title.",
+        header: this._translate.instant('FillInput'),
         buttons: [
           {
               text: 'OK'

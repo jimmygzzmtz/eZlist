@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
       <ion-title class="ion-text-center">
-        <ion-label>Add Item</ion-label>
+        <ion-label translate>AddItem</ion-label>
       </ion-title>
       <ion-buttons (click)="dismiss()" slot="start">
           <ion-icon color="danger" slot="icon-only" name="close"></ion-icon>
@@ -15,7 +15,7 @@
 <ion-content>
   <ion-list>
     <ion-item lines="full">
-      <ion-input [(ngModel)]="itemNameString" id="itemName" disabled class="ion-text-center" placeholder="Select a category, then enter a title"></ion-input>
+      <ion-input [(ngModel)]="itemNameString" id="itemName" disabled class="ion-text-center" placeholder="{{ 'ItemNameInstructions' | translate }}"></ion-input>
     </ion-item>
   </ion-list>
 
@@ -26,19 +26,19 @@
               <ion-button id="barButton" color="secondary" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
                   <ion-icon size="large" name="beer"></ion-icon>
               </ion-button>
-              <h3>Bar</h3>          
+              <h3 translate>Bar</h3>          
             </ion-col>
             <ion-col class="ion-text-center">
               <ion-button id="bookButton" color="warning" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
                   <ion-icon size="large" name="book"></ion-icon>
               </ion-button> 
-            <h3>Book</h3>   
+            <h3 translate>Book</h3>   
             </ion-col>
             <ion-col class="ion-text-center">
               <ion-button id="foodButton" color="pink" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
                   <ion-icon size="large" name="pizza"></ion-icon>
               </ion-button> 
-            <h3>Food</h3>   
+            <h3 translate>Food</h3>   
             </ion-col>
       </ion-row>
 
@@ -47,19 +47,19 @@
               <ion-button id="ideaButton" color="orange" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
                   <ion-icon size="large" name="bulb"></ion-icon>
               </ion-button> 
-            <h3>Idea</h3>            
+            <h3 translate>Idea</h3>            
             </ion-col>
             <ion-col class="ion-text-center">
               <ion-button id="movieButton" color="success" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
                   <ion-icon size="large" name="videocam"></ion-icon>
               </ion-button> 
-            <h3>Movie/TV</h3>   
+            <h3 translate>Movie/TV</h3>   
             </ion-col>
             <ion-col class="ion-text-center">
               <ion-button id="musicButton" color="light-orange" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
                   <ion-icon size="large" name="musical-notes"></ion-icon>
               </ion-button> 
-            <h3>Music</h3>
+            <h3 translate>Music</h3>
             </ion-col>
       </ion-row>
 
@@ -68,19 +68,19 @@
               <ion-button id="personButton" color="tertiary" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
                   <ion-icon size="large" name="person"></ion-icon>
               </ion-button>
-            <h3>Person</h3>          
+            <h3 translate>Person</h3>          
             </ion-col>
             <ion-col class="ion-text-center">
               <ion-button id="placeButton" color="danger" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
                   <ion-icon size="large" name="pin"></ion-icon>
               </ion-button>
-            <h3>Place</h3>    
+            <h3 translate>Place</h3>    
             </ion-col>
             <ion-col class="ion-text-center">
               <ion-button id="productButton" color="light-red" (click)="selectedButton($event)" size="large" shape="round" fill="solid">
                   <ion-icon size="large" name="cube"></ion-icon>
               </ion-button>
-            <h3>Product</h3> 
+            <h3 translate>Product</h3> 
             </ion-col>
       </ion-row>
 

@@ -4,25 +4,25 @@
       eZlist
     </ion-title>
     <ion-item hidden>
-        <ion-label>Filter</ion-label>
-        <ion-select [(ngModel)]="filterBy" id="hiddenSelector">
-            <ion-select-option selected value="All">All</ion-select-option>
-            <ion-select-option value="Bar">Bar</ion-select-option>
-            <ion-select-option value="Book">Book</ion-select-option>
-            <ion-select-option value="Food">Food</ion-select-option>
-            <ion-select-option value="Idea">Idea</ion-select-option>
-            <ion-select-option value="Movie">Movie/TV</ion-select-option>
-            <ion-select-option value="Music">Music</ion-select-option>
-            <ion-select-option value="Person">Person</ion-select-option>
-            <ion-select-option value="Place">Place</ion-select-option>
-            <ion-select-option value="Product">Product</ion-select-option>
+        <ion-label translate>Filter</ion-label>
+        <ion-select [(ngModel)]="filterBy" id="hiddenSelector" cancelText="{{ 'Cancel' | translate }}">
+            <ion-select-option selected value="All" translate>All</ion-select-option>
+            <ion-select-option value="Bar" translate>Bar</ion-select-option>
+            <ion-select-option value="Book" translate>Book</ion-select-option>
+            <ion-select-option value="Food" translate>Food</ion-select-option>
+            <ion-select-option value="Idea" translate>Idea</ion-select-option>
+            <ion-select-option value="Movie" translate>Movie/TV</ion-select-option>
+            <ion-select-option value="Music" translate>Music</ion-select-option>
+            <ion-select-option value="Person" translate>Person</ion-select-option>
+            <ion-select-option value="Place" translate>Place</ion-select-option>
+            <ion-select-option value="Product" translate>Product</ion-select-option>
         </ion-select>
     </ion-item>
     <ion-buttons (click)="filterSelect()" slot="start">
         <ion-icon slot="icon-only" name="list"></ion-icon>
     </ion-buttons>
-    <ion-buttons (click)="help()" slot="end">
-        <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
+    <ion-buttons (click)="goToSettings()" slot="end">
+        <ion-icon slot="icon-only" name="settings"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -42,7 +42,7 @@
         </ion-avatar>
         <ion-label>
           <h1>{{ item.name }}</h1>
-          <p>{{ item.category }}</p>
+          <p translate>{{ item.category }}</p>
         </ion-label>
       </ion-item>
       

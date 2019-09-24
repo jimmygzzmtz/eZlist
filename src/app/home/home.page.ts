@@ -3,6 +3,8 @@ import { Storage } from '@ionic/storage';
 import { ModalController, NavController, AlertController } from '@ionic/angular';
 import { AddItemModalPage } from '../add-item-modal/add-item-modal.page';
 import { OpenItemPage } from '../open-item/open-item.page';
+import { SettingsPage } from '../settings/settings.page';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +20,8 @@ export class HomePage {
 
   nav = document.querySelector('ion-nav');
 
-  constructor(private storage: Storage, public modalController: ModalController, public navController: NavController, public alertController: AlertController) {
+  constructor(private storage: Storage, public modalController: ModalController, public navController: NavController, public alertController: AlertController, private _translate: TranslateService) {
+    
     this.storage.get('itemsArr').then((val) => {
       if (val != "[]"){
        this.items = JSON.parse(val)
@@ -27,6 +30,11 @@ export class HomePage {
        this.storage.set('itemsArr', JSON.stringify(this.items));
       }
     });
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    prefersDark.addListener((e) => this.checkToggle(e.matches));
+    this.checkToggle(prefersDark.matches)
+
     this.filterBy = "All"
   }
 
@@ -37,18 +45,47 @@ export class HomePage {
   }
 
   ngOnInit() {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    prefersDark.addListener((e) => this.checkToggle(e.matches));
-    this.checkToggle(prefersDark.matches)
+    this.storage.get('lang').then((val) => {
+      if (val != null){
+        this._translate.use(val);
+      }
+      else{
+        this._translate.use(this._translate.getBrowserLang());
+       this.storage.set('lang', this._translate.getBrowserLang());
+      }
+
+    });
   }
 
   checkToggle(shouldCheck) {
-      if(shouldCheck == true){
+    var darkOpt
+
+    this.storage.get('darkMode').then((val) => {
+      if (val != null){
+        darkOpt = val
+      }
+      else{
+       this.storage.set('darkMode', 'system');
+       darkOpt.value = 'system'
+      }
+
+      if(darkOpt == 'system'){
+        if(shouldCheck == true){
+          document.body.classList.add('dark')
+        }
+        if(shouldCheck == false){
+          document.body.classList.remove('dark')
+        }
+      }
+
+      if(darkOpt == 'on'){
         document.body.classList.add('dark')
       }
-      if(shouldCheck == false){
+      if(darkOpt == 'off'){
         document.body.classList.remove('dark')
       }
+    });
+
   }
 
   filterSelect(){
@@ -99,17 +136,15 @@ export class HomePage {
     } 
   }
 
-  async help(){
-    const alert = await this.alertController.create({
-      header: "About",
-      message: 'eZlist Version 0.1.4',
-      buttons: [
-        {
-            text: 'OK'
-        }
-    ]
+  async goToSettings(){
+
+    const modal = await this.modalController.create({
+      component: SettingsPage,
+      componentProps: {
+      }
     });
-    await alert.present();
+
+    await modal.present(); 
   }
 
   async addItem() {

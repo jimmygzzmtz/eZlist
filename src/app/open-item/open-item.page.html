@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Details</ion-title>
+    <ion-title class="ion-text-center" translate>Details</ion-title>
     <ion-buttons (click)="dismiss()" slot="start">
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
     </ion-buttons>
@@ -19,27 +19,27 @@
       
         <ion-item lines="none">
             <ion-item hidden>
-                <ion-label>Category</ion-label>
-                <ion-select [(ngModel)]="categorySelectorVal" id="hiddenCatSelector" (ionChange)="catChanged(categorySelectorVal)">
-                    <ion-select-option value="Bar">Bar</ion-select-option>
-                    <ion-select-option value="Book">Book</ion-select-option>
-                    <ion-select-option value="Food">Food</ion-select-option>
-                    <ion-select-option value="Idea">Idea</ion-select-option>
-                    <ion-select-option value="Movie">Movie/TV</ion-select-option>
-                    <ion-select-option value="Music">Music</ion-select-option>
-                    <ion-select-option value="Person">Person</ion-select-option>
-                    <ion-select-option value="Place">Place</ion-select-option>
-                    <ion-select-option value="Product">Product</ion-select-option>
+                <ion-label translate>Category</ion-label>
+                <ion-select [(ngModel)]="categorySelectorVal" id="hiddenCatSelector" (ionChange)="catChanged(categorySelectorVal)" cancelText="{{ 'Cancel' | translate }}">
+                    <ion-select-option value="Bar" translate>Bar</ion-select-option>
+                    <ion-select-option value="Book" translate>Book</ion-select-option>
+                    <ion-select-option value="Food" translate>Food</ion-select-option>
+                    <ion-select-option value="Idea" translate>Idea</ion-select-option>
+                    <ion-select-option value="Movie" translate>Movie/TV</ion-select-option>
+                    <ion-select-option value="Music" translate>Music</ion-select-option>
+                    <ion-select-option value="Person" translate>Person</ion-select-option>
+                    <ion-select-option value="Place" translate>Place</ion-select-option>
+                    <ion-select-option value="Product" translate>Product</ion-select-option>
                 </ion-select>
             </ion-item>
             <ion-buttons (click)="categorySelect()" slot="start">
                 <ion-icon slot="start" [ngStyle]="{'color': color}" name="{{ icon }}"></ion-icon>
-                <ion-label>{{ category }}</ion-label>
+                <ion-label translate>{{ category }}</ion-label>
             </ion-buttons>
-            <ion-label class="ion-text-right">{{ date | date : 'MMM d, y'}}</ion-label>
+            <ion-label class="ion-text-right">{{ date | date : 'MMM d, y' : '' : this.language}}</ion-label>
         </ion-item> 
       </ion-card>
 
-    <ion-textarea rows="30" cols="20" id="textArea" [(ngModel)]="notesArea" placeholder="Type your notes here!"></ion-textarea>
+    <ion-textarea rows="30" cols="20" id="textArea" [(ngModel)]="notesArea" placeholder="{{ 'NotesInstructions' | translate }}"></ion-textarea>
 
 </ion-content>

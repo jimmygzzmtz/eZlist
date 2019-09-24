@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-open-item',
@@ -17,8 +18,10 @@ export class OpenItemPage implements OnInit {
   itemNameInput: any;
   categorySelector: any;
   categorySelectorVal: any;
+  
+  language: any;
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, private _translate: TranslateService) { }
 
   ngOnInit() {
     this.icon = this.openedItem.icon
@@ -89,6 +92,10 @@ export class OpenItemPage implements OnInit {
   categorySelect(){
     this.categorySelector = document.querySelector('#hiddenCatSelector')
     this.categorySelector.open()
+  }
+
+  ionViewWillEnter(){
+    this.language = "" + this._translate.currentLang
   }
 
   save(){
