@@ -36,6 +36,21 @@ export class HomePage {
     this.storage.set('itemsArr', JSON.stringify(this.items));
   }
 
+  ngOnInit() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    prefersDark.addListener((e) => this.checkToggle(e.matches));
+    this.checkToggle(prefersDark.matches)
+  }
+
+  checkToggle(shouldCheck) {
+      if(shouldCheck == true){
+        document.body.classList.add('dark')
+      }
+      if(shouldCheck == false){
+        document.body.classList.remove('dark')
+      }
+  }
+
   filterSelect(){
     this.filterSelector = document.querySelector('#hiddenSelector')
     this.filterSelector.open()
@@ -87,7 +102,7 @@ export class HomePage {
   async help(){
     const alert = await this.alertController.create({
       header: "About",
-      message: 'eZlist Version 0.1.2',
+      message: 'eZlist Version 0.1.4',
       buttons: [
         {
             text: 'OK'

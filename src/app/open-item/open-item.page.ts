@@ -42,38 +42,47 @@ export class OpenItemPage implements OnInit {
     if(cat == "Bar"){
       this.icon = "beer"
       this.color = "#0cd1e8"
+      this.category = "Bar"
     }
     if(cat == "Book"){
       this.icon = "book"
       this.color = "#ffce00"
+      this.category = "Book"
     }
     if(cat == "Food"){
       this.icon = "pizza"
       this.color = "pink"
+      this.category = "Food"
     }
     if(cat == "Idea"){
       this.icon = "bulb"
       this.color = "orange"
+      this.category = "Idea"
     }
     if(cat == "Movie"){
       this.icon = "videocam"
       this.color = "#10dc60"
+      this.category = "Movie"
     }
     if(cat == "Music"){
       this.icon = "musical-notes"
       this.color = "#ffbe7d"
+      this.category = "Music"
     }
     if(cat == "Person"){
       this.icon = "person"
       this.color = "#7044ff"
+      this.category = "Person"
     }
     if(cat == "Place"){
       this.icon = "pin"
       this.color = "#f04141"
+      this.category = "Place"
     }
     if(cat == "Product"){
       this.icon = "cube"
       this.color = "#ff8080"
+      this.category = "Product"
     }
   }
 
