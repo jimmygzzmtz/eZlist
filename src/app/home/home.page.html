@@ -31,12 +31,12 @@
   
   <ion-list>
 
-    <ion-item-sliding *ngFor="let item of getItems()">
+    <ion-item-sliding id="{{ item.name }}{{ item.category }}" *ngFor="let item of getItems()">
       <ion-item-options side="start">
         <ion-item-option color="danger" (click)="deleteItem(item)">Delete</ion-item-option>
       </ion-item-options>
   
-      <ion-item button lines="full" (click)="openItem(item)">
+      <ion-item button lines="full" (click)="openItem(item)" (contextmenu)="onRightClick(item)">
         <ion-avatar slot="start">
             <ion-icon [ngStyle]="{'color': item.color}" size="large" name="{{ item.icon }}"></ion-icon>
         </ion-avatar>

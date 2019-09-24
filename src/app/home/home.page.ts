@@ -41,6 +41,13 @@ export class HomePage {
     this.filterSelector.open()
   }
 
+  onRightClick(item){
+    var item2: any
+    item2 = (document.getElementById(item.name + item.category))
+    item2.open()
+    return false;
+  }
+
   async openItem(item){
     let index = this.items.indexOf(item);
 
@@ -80,7 +87,7 @@ export class HomePage {
   async help(){
     const alert = await this.alertController.create({
       header: "About",
-      message: 'eZlist Version 0.1.1',
+      message: 'eZlist Version 0.1.2',
       buttons: [
         {
             text: 'OK'

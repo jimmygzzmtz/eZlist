@@ -18,8 +18,24 @@
         </ion-item>
       
         <ion-item lines="none">
-            <ion-icon slot="start" [ngStyle]="{'color': color}" name="{{ icon }}"></ion-icon>
-            <ion-label>{{ category }}</ion-label>
+            <ion-item hidden>
+                <ion-label>Category</ion-label>
+                <ion-select [(ngModel)]="categorySelectorVal" id="hiddenCatSelector" (ionChange)="catChanged(categorySelectorVal)">
+                    <ion-select-option value="Bar">Bar</ion-select-option>
+                    <ion-select-option value="Book">Book</ion-select-option>
+                    <ion-select-option value="Food">Food</ion-select-option>
+                    <ion-select-option value="Idea">Idea</ion-select-option>
+                    <ion-select-option value="Movie">Movie/TV</ion-select-option>
+                    <ion-select-option value="Music">Music</ion-select-option>
+                    <ion-select-option value="Person">Person</ion-select-option>
+                    <ion-select-option value="Place">Place</ion-select-option>
+                    <ion-select-option value="Product">Product</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-buttons (click)="categorySelect()" slot="start">
+                <ion-icon slot="start" [ngStyle]="{'color': color}" name="{{ icon }}"></ion-icon>
+                <ion-label>{{ category }}</ion-label>
+            </ion-buttons>
             <ion-label class="ion-text-right">{{ date | date : 'MMM d, y'}}</ion-label>
         </ion-item> 
       </ion-card>

@@ -15,6 +15,8 @@ export class OpenItemPage implements OnInit {
   date: any;
   notesArea: any;
   itemNameInput: any;
+  categorySelector: any;
+  categorySelectorVal: any;
 
   constructor(public modalController: ModalController) { }
 
@@ -26,6 +28,8 @@ export class OpenItemPage implements OnInit {
     this.notesArea = this.openedItem.notes
     this.itemNameInput = this.openedItem.name
 
+    this.categorySelectorVal = this.openedItem.category
+
     //var textArea = document.querySelector('#textArea');
     //setTimeout(() => { textArea.setFocus(); }, 150);
   }
@@ -34,9 +38,53 @@ export class OpenItemPage implements OnInit {
     this.modalController.dismiss();
   }
 
+  catChanged(cat){
+    if(cat == "Bar"){
+      this.icon = "beer"
+      this.color = "#0cd1e8"
+    }
+    if(cat == "Book"){
+      this.icon = "book"
+      this.color = "#ffce00"
+    }
+    if(cat == "Food"){
+      this.icon = "pizza"
+      this.color = "pink"
+    }
+    if(cat == "Idea"){
+      this.icon = "bulb"
+      this.color = "orange"
+    }
+    if(cat == "Movie"){
+      this.icon = "videocam"
+      this.color = "#10dc60"
+    }
+    if(cat == "Music"){
+      this.icon = "musical-notes"
+      this.color = "#ffbe7d"
+    }
+    if(cat == "Person"){
+      this.icon = "person"
+      this.color = "#7044ff"
+    }
+    if(cat == "Place"){
+      this.icon = "pin"
+      this.color = "#f04141"
+    }
+    if(cat == "Product"){
+      this.icon = "cube"
+      this.color = "#ff8080"
+    }
+  }
+
+  categorySelect(){
+    this.categorySelector = document.querySelector('#hiddenCatSelector')
+    this.categorySelector.open()
+  }
+
   save(){
     var editedItem = {
-      category: this.category,
+      category: this.categorySelectorVal,
       name: this.itemNameInput,
       icon: this.icon,
       color: this.color,
