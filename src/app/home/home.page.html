@@ -33,7 +33,7 @@
 
     <ion-item-sliding id="{{ item.name }}{{ item.category }}" *ngFor="let item of getItems()">
       <ion-item-options side="start">
-        <ion-item-option color="danger" (click)="deleteItem(item)">Delete</ion-item-option>
+        <ion-item-option color="danger" (click)="deleteItem(item)" translate>Delete</ion-item-option>
       </ion-item-options>
   
       <ion-item button lines="full" (click)="openItem(item)" (contextmenu)="onRightClick(item)">

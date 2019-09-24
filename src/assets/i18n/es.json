@@ -31,5 +31,6 @@
     "ItemNameInstructions": "Seleccione una categoría, escriba un título",
     "Details": "Detalles",
     "Category": "Categoria",
-    "NotesInstructions": "¡Escriba sus notas aquí!"
+    "NotesInstructions": "¡Escriba sus notas aquí!",
+    "Delete": "Borrar"
 }
