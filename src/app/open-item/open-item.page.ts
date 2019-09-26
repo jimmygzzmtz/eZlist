@@ -62,10 +62,10 @@ export class OpenItemPage implements OnInit {
       this.color = "orange"
       this.category = "Idea"
     }
-    if(cat == "Movie"){
+    if(cat == "Movie/TV"){
       this.icon = "videocam"
       this.color = "#10dc60"
-      this.category = "Movie"
+      this.category = "Movie/TV"
     }
     if(cat == "Music"){
       this.icon = "musical-notes"

@@ -48,6 +48,27 @@ export class SettingsPage implements OnInit {
     this.modalController.dismiss();
   }
 
+  async clearStorage() {
+    const alert = await this.alertController.create({
+      header: this._translate.instant('ClearSt'),
+      message: this._translate.instant('ConfirmClear'),
+      buttons: [
+        {
+            text: this._translate.instant('Cancel')
+        },
+        {
+            text: 'OK',
+            handler: data => {
+              this.storage.clear()
+              location.reload()
+            }
+        }
+    ]
+    });
+
+    await alert.present();
+  }
+
   switchLang(lang){
     this._translate.use(lang);
     this.storage.set('lang', lang);

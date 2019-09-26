@@ -66,7 +66,7 @@ export class HomePage {
       }
       else{
        this.storage.set('darkMode', 'system');
-       darkOpt.value = 'system'
+       darkOpt = 'system'
       }
 
       if(darkOpt == 'system'){
