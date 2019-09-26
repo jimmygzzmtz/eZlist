@@ -24,14 +24,14 @@ export class AddItemModalPage implements OnInit {
     this.itemName = document.querySelector('#itemName');
     this.itemName.disabled = false
     setTimeout(() => { this.itemName.setFocus(); }, 150);
-    if(this.selectedButtonId != $event.target.id){
-      this.buttonAux = document.querySelector('#' + $event.target.id)
+    if(this.selectedButtonId != $event.currentTarget.id){
+      this.buttonAux = document.querySelector('#' + $event.currentTarget.id)
       this.buttonAux.fill = "outline"
       if(this.selectedButtonId != undefined){
         this.buttonAux = document.querySelector('#' + this.selectedButtonId)
         this.buttonAux.fill = "solid"
       }
-      this.selectedButtonId = $event.target.id
+      this.selectedButtonId = $event.currentTarget.id
     }
     else{
       this.buttonAux = document.querySelector('#' + this.selectedButtonId)
