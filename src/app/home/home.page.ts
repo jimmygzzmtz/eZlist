@@ -107,7 +107,8 @@ export class HomePage {
       component: OpenItemPage,
       componentProps: {
         openedItem: item 
-      }
+      },
+      cssClass: "fullscreenModal"
     });
 
     modal.onDidDismiss()
@@ -141,7 +142,8 @@ export class HomePage {
     const modal = await this.modalController.create({
       component: SettingsPage,
       componentProps: {
-      }
+      },
+      cssClass: "fullscreenModal"
     });
 
     await modal.present(); 
@@ -151,8 +153,8 @@ export class HomePage {
     const modal = await this.modalController.create({
       component: AddItemModalPage,
       componentProps: { 
-      }
-
+      },
+      cssClass: "fullscreenModal"
       
     });
 
