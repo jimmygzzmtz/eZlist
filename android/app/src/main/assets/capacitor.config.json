@@ -1,7 +1,0 @@
-{
-  "appId": "com.jimmygzzmtz.eZlist",
-  "appName": "eZlist",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www"
-}
